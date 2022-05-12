@@ -9,4 +9,4 @@ COPY --from=builder /go/src/github.com/prometheus-community/jiralert/jiralert /b
 COPY /examples/jiralert.yml /config/jiralert.yml
 COPY /examples/jiralert.tmpl /config/jiralert.tmpl
 
-CMD ["/bin/jiralert", "/tmp/jiralert.yml", "/tmp/jiralert.tmpl"]
+#CMD ["/bin/jiralert", "/tmp/jiralert.yml", "/tmp/jiralert.tmpl"]
