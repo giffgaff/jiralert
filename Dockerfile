@@ -8,5 +8,5 @@ FROM quay.io/prometheus/busybox-linux-amd64:latest
 COPY --from=builder /go/src/github.com/prometheus-community/jiralert/jiralert /bin/jiralert
 COPY /examples/jiralert.yml /config/jiralert.yml
 COPY /examples/jiralert.tmpl /config/jiralert.tmpl
-CMD ["sleep 1500"]
+ENTRYPOINT ["tail", "-f", "/dev/null"]
 #CMD ["/bin/jiralert", "/tmp/jiralert.yml", "/tmp/jiralert.tmpl"]
