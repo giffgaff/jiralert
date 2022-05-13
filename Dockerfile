@@ -10,7 +10,7 @@ COPY /examples/jiralert.yml /config/jiralert.yml
 COPY /examples/jiralert.tmpl /config/jiralert.tmpl
 COPY /examples/jiralert.sh /config/jiralert.sh
 
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+RUN ./config/jiralert.sh
 
-CMD ["./config/jiralert.sh"]
-# CMD ["/bin/jiralert", "/tmp/jiralert.yml", "/tmp/jiralert.tmpl"]
+#ENTRYPOINT ["tail", "-f", "/dev/null"]
+CMD ["/bin/jiralert", "/tmp/jiralert.yml", "/tmp/jiralert.tmpl"]
