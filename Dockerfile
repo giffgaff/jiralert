@@ -8,5 +8,11 @@ FROM quay.io/prometheus/busybox-linux-amd64:latest
 COPY --from=builder /go/src/github.com/prometheus-community/jiralert/jiralert /bin/jiralert
 COPY /examples/jiralert.yml /config/jiralert.yml
 COPY /examples/jiralert.tmpl /config/jiralert.tmpl
+
+RUN sed -i "s|api_url:|api_url: $JIRALERT_URL|g" "/config/jiralert.yml"
+RUN sed -i "s|user:|user: $JIRALERT_USER|g" "/config/jiralert.yml"
+RUN sed -i "s|password:|password: $JIRALERT_PASS|g" "/config/jiralert.yml"
+RUN sed -i "s|project:|project: $JIRALERT_PROJECT|g" "/config/jiralert.yml"
+
 ENTRYPOINT ["tail", "-f", "/dev/null"]
-#CMD ["/bin/jiralert", "/tmp/jiralert.yml", "/tmp/jiralert.tmpl"]
+# CMD ["/bin/jiralert", "/tmp/jiralert.yml", "/tmp/jiralert.tmpl"]

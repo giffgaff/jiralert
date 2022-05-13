@@ -3,10 +3,9 @@
 # Global defaults, applied to all receivers where not explicitly overridden. Optional.
 defaults:
   # API access fields.
-  api_url: ${JIRALERT_URL}
-  user: ${JIRALERT_USER}
-  password: ${JIRALERT_PASS}
-
+  api_url: 
+  user: 
+  password: 
   # The type of JIRA issue to create. Required.
   issue_type: Story
   # Issue priority. Optional.
@@ -28,7 +27,7 @@ receivers:
   # Must match the Alertmanager receiver name. Required.
   - name: 'jira-ab'
     # JIRA project to create the issue in. Required.
-    project: ${JIRALERT_PROJECT}
+    project: 
     # Copy all Prometheus labels into separate JIRA labels. Optional (default: false).
     add_group_labels: true
 
