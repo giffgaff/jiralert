@@ -30,7 +30,7 @@ receivers:
   # Must match the Alertmanager receiver name. Required.
   - name: 'jira-ab'
     # JIRA project to create the issue in. Required.
-    project: $JIRA_PROJECT
+    project: $JIRALERT_PROJECT
     # Copy all Prometheus labels into separate JIRA labels. Optional (default: false).
     add_group_labels: true
 
