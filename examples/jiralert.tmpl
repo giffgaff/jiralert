@@ -1,12 +1,7 @@
 {{ define "jira.summary" }}
-{{ range .Alerts.Firing }}
-{{ range .Labels.SortedPairs }}
-{{ if eq .Name "alertname" }} {{ .Value }}{{ end }}
-{{ end }}
-{{ end }}
-{{ end }}
-{{ define "jira.description" }}{{ range .Alerts.Firing }}
-Labels:
+{{ .GroupLabels.SortedPairs.Values | join " - " }} {{ end }}
+
+{{ define "jira.description" }}{{ range .Alerts.Firing }}Labels:
 {{ range .Labels.SortedPairs }} - {{ .Name }} = {{ .Value }}
 {{ end }}
 Annotations:
