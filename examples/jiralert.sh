@@ -18,7 +18,7 @@ defaults:
   # Go template invocation for generating the description. Optional.
   description: '{{ template "jira.description" . }}'
   # State to transition into when reopening a closed issue. Required.
-  reopen_state: "BACKLOG"
+  reopen_state: "Backlog"
   # Do not reopen issues with this resolution. Optional.
   wont_fix_resolution: "Won't Fix"
   # Amount of time after being closed that an issue should be reopened, after which, a new issue is created.
