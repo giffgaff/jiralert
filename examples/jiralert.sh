@@ -32,10 +32,10 @@ receivers:
     # JIRA project to create the issue in. Required.
     project: $JIRALERT_PROJECT
     # Copy all Prometheus labels into separate JIRA labels. Optional (default: false).
-    add_group_labels: true
+    add_group_labels: false
 
 # File containing template definitions. Required.
 template: jiralert.tmpl
 EOF
 
-/bin/jiralert /config/jiralert.yml /config/jiralert.tmpl
+/bin/jiralert -hash-jira-label /config/jiralert.yml /config/jiralert.tmpl
