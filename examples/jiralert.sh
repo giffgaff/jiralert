@@ -38,4 +38,4 @@ receivers:
 template: jiralert.tmpl
 EOF
 
-/bin/jiralert -hash-jira-label /config/jiralert.yml /config/jiralert.tmpl
+/bin/jiralert /config/jiralert.yml /config/jiralert.tmpl
