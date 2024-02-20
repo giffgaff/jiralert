@@ -1,7 +1,9 @@
 {{ define "jira.summary" }}
 {{ .GroupLabels.SortedPairs.Values | join " - " }} {{ end }}
 
-{{ define "jira.description" }}{{ range .Alerts.Firing }}Labels:
+{{ define "jira.description" }}{{ range .Alerts.Firing }}
+Started at: {{.StartsAt}}
+Labels:
 {{ range .Labels.SortedPairs }} - {{ .Name }} = {{ .Value }}
 {{ end }}
 Annotations:
