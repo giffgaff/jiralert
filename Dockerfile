@@ -1,7 +1,7 @@
 FROM golang:1.23 AS builder
 WORKDIR /go/src/github.com/prometheus-community/jiralert
 COPY . /go/src/github.com/prometheus-community/jiralert
-RUN export GOPACKAGESDRIVER_TIMEOUT=1m && go mod tidy && GO111MODULE=on GOBIN=/tmp/bin make
+RUN export GOPACKAGESDRIVER_TIMEOUT=5m && go mod tidy && GO111MODULE=on GOBIN=/tmp/bin make
 
 
 FROM quay.io/prometheus/busybox-linux-amd64:latest
